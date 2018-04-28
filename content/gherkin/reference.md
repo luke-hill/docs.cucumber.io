@@ -77,11 +77,11 @@ Feature: Guess the word
   Example: Maker starts a game
 ```
 
-The name and the Optional description have no special meaning to Cucumber. Their purpose is to provide
+The name and the description have no special meaning to Cucumber. Their purpose is to provide
 a place for you to document important aspects of the feature, such as a brief explanation
 and a list of business rules (general acceptance criteria).
 
-The free format description for `Feature` ends when you start a line with the Keyword `Scenario` or `Scenario Outline`.
+The free format description for `Feature` ends when you start a line with the keyword `Scenario` or `Scenario Outline`.
 
 You can place [tags](/cucumber/api/#tags) above `Feature` to group related features,
 independent of your file and directory structure.
@@ -183,7 +183,7 @@ The [step definition](/cucumber/api/#step-definitions) of a `Then` step should u
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the step says the system is supposed to do).
 
-An observation _should_ be on an **observable** output. That is, something that comes *out* of the system (report, user interface, message), and not something deeply buried inside it (like a database).
+An observation *should* be on an **observable** output. That is, something that comes *out* of the system (report, user interface, message), and not something deeply buried inside it (like a database).
 
 Examples:
 
@@ -233,7 +233,7 @@ more `Given` steps.
 
 A `Background` is run before *each* scenario, but after any [Before hooks](/cucumber/api/#hooks). In your feature file, put the `Background` before the first `Scenario`.
 
-You can only have one set of `Background` steps per feature. If you need different `Background` steps for different features, then it's indicative of you needing to isolate your test cases into 2 or more features.
+You can only have one set of `Background` steps per feature. If you need different `Background` steps for different features, you'll need to split them into different feature files.
 
 For example:
 
@@ -268,7 +268,7 @@ For a less explicit alternative to `Background`, check out [tagged hooks](/cucum
 
 ## Tips for using Background
 
-* Don't use `Background` to set up a **complicated state**, unless that state is actually something the client needs to know.
+* Don't use `Background` to set up **complicated state**, unless that state is actually something the client needs to know.
   * For example, if the user and site names don't matter to the client, use a higher-level step such as
 `Given I am logged in as a site owner`.
 * Keep your `Background` section **short**.
